@@ -76,4 +76,4 @@ class ResNet18(tf.keras.layers):
 
     def call(self, inputs):
         return self.model(inputs)
-class
+class ResNet34(tf.keras.layers):
