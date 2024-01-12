@@ -1,0 +1,9 @@
+numpy
+matplotlib
+pandas
+scipy
+scikit-learn
+torch
+torchvision==0.16
+tornado==6.2
+tqdm==4.62.0
