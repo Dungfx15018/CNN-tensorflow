@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.layers import Conv2D, BatchNormalization, Activation, MaxPooling2D, GlobalAveragePooling2D, Dense, Add
 import keras
 
-class ResNet2Layer(tf.keras.layers):
+class ResNet2Layer(tf.keras.layers.Layer):
     def __init__(self, filters, strides = 1, activation = 'relu'):
         super(ResNet2Layer, self).__init__()
         self.main = tf.keras.models.Sequential([
@@ -17,7 +17,7 @@ class ResNet2Layer(tf.keras.layers):
         x = Add()([self.main(input), self.shortcut(inputs)])
         x = self.activation(x)
         return x
-class ResNet3Layer(tf.keras.layers):
+class ResNet3Layer(tf.keras.layers.Layer):
     def __init__(self, filters , strides = 1, activation = 'relu'):
         super(ResNet3Layer, self).__init__()
         self.main = tf.keras.models.Sequential([
@@ -61,7 +61,7 @@ class ResNetModel(tf.keras.models):
             self.model.add(ResNet3Layer(filters, strides))
 
 
-class ResNet18(tf.keras.layers):
+class ResNet18(tf.keras.layers.Layer):
     def __init__(self, input_shape, num_classes):
         super(ResNet18, self).__init__(input_shape, num_classes)
 
@@ -76,4 +76,4 @@ class ResNet18(tf.keras.layers):
 
     def call(self, inputs):
         return self.model(inputs)
-class ResNet34(tf.keras.layers):
+#class ResNet34(tf.keras.layers):
