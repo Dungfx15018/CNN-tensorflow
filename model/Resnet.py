@@ -38,7 +38,7 @@ class ResNet3Layer(tf.keras.layers.Layer):
         x = self.activation(x)
         return x
 
-class ResNetModel(tf.keras.models):
+class ResNetModel(tf.keras.models.Model):
     def __init__(self, input_shape, numclasses):
         super(ResNetModel, self).__init__()
         self.main = tf.keras.models.Sequential([
@@ -76,4 +76,6 @@ class ResNet18(tf.keras.layers.Layer):
 
     def call(self, inputs):
         return self.model(inputs)
-#class ResNet34(tf.keras.layers):
+class ResNet34(tf.keras.layers.Layer):
+    def __int__(self, input_shape, num_classes):
+        super(ResNet34, self).__int__(input_shape, num_classes)
